@@ -7,10 +7,12 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: 8-bit-fox/docker-container-action-101@v3
+      uses: 8-bit-fox/docker-container-action-101@v4
       with:
         who-to-greet: 'Mona the Octocat'
     # Use the output from the `hello` step
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
+    - name: Get the image os
+      run: echo "The image was ${{ steps.hello.outputs.os }}"
 
